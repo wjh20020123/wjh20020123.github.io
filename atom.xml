@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://km0n30.coding-pages.com</id>
     <title>小王</title>
-    <updated>2020-03-20T06:49:54.385Z</updated>
+    <updated>2020-03-20T07:40:08.046Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://km0n30.coding-pages.com"/>
     <link rel="self" href="https://km0n30.coding-pages.com/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>https://km0n30.coding-pages.com/images/avatar.png</logo>
     <icon>https://km0n30.coding-pages.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 小王</rights>
+    <entry>
+        <title type="html"><![CDATA[零成本搭建个人博客]]></title>
+        <id>https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/</id>
+        <link href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/">
+        </link>
+        <updated>2020-03-20T07:04:07.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>注册coding账号</strong><br>
+首先我们进入coding的<a href="https://coding.net/">官网</a><br>
+点击右上角的免费注册，进入之后我们点击创建项目<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688283351.png" alt="" loading="lazy"><br>
+选第一个<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688317167.png" alt="" loading="lazy"><br>
+项目名称和标识随便填<br>
+启用readme.md<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688430421.png" alt="" loading="lazy"><br>
+进入项目点击左下角的<em>项目设置</em><br>
+打开<em>构建与部署</em><br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688609583.png" alt="" loading="lazy"><br>
+返回项目找到静态网站填写好网站名称后点击保存<br>
+然后你就可已看到你的<em>网站访问地址</em>了<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688797547.png" alt="" loading="lazy"><br>
+添加访问令牌<br>
+我们在<em>个人设置</em>里面找到<em>访问令牌</em>，创建一个令牌<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689144729.png" alt="" loading="lazy"><br>
+创建完成后会有一个令牌用户名和令牌，这里注意令牌只会出现一次，这里我们注意保存。<br>
+<strong>配置Gridea</strong><br>
+进入<a href="https://gridea.dev/">Gridea官网</a>，下载安装gridea<br>
+打开Gridea，选择远程<br>
+域名填写之前生成的<em>网站访问地址</em>，这里注意你的网站访问地址是http协议还是https协议。<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689571079.png" alt="" loading="lazy"><br>
+这里可以看到你的仓库名称<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689641057.png" alt="" loading="lazy"><br>
+这里可以看到你的仓库用户名<br>
+分支填写master<br>
+并填入之前生产的令牌用户名和令牌<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689746413.png" alt="" loading="lazy"><br>
+检测远程连接成功后，我们就可以点击同步，同步成功后我们再去访问我们的<em>网站访问地址</em>就可以看到我们的网站了。</p>
+<p><strong>到这里主要工作就结束了，剩下的就是自己去开发美化了</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[精灵与萤火意志]]></title>
         <id>https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/</id>

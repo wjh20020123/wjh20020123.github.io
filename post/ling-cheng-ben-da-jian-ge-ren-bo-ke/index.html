@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="小王">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
-<title>小王</title>
+<title>零成本搭建个人博客 | 小王</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1584689974605">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -37,6 +37,8 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+    <meta name="description" content="零成本搭建个人博客" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -138,10 +140,25 @@ var _hmt = _hmt || [];
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://km0n30.coding-pages.com/images/avatar.png"/>
@@ -198,64 +215,215 @@ var _hmt = _hmt || [];
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          游戏
-          <small>标签</small>
-        </h2>
-      </div>
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/">
+      零成本搭建个人博客
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-03-20</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>353<span class="pc-show">字数</span></span>
+    </span>
+    
+      
       
         
       
-        
-          
-            <a href="https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    03-20
-                    <small>精灵与萤火意志</small>
-                  </h1>
-                </div>  
+      <span id="/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/" data-flag-title="零成本搭建个人博客" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p><strong>注册coding账号</strong><br>
+首先我们进入coding的<a href="https://coding.net/">官网</a><br>
+点击右上角的免费注册，进入之后我们点击创建项目<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688283351.png" alt="" loading="lazy"><br>
+选第一个<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688317167.png" alt="" loading="lazy"><br>
+项目名称和标识随便填<br>
+启用readme.md<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688430421.png" alt="" loading="lazy"><br>
+进入项目点击左下角的<em>项目设置</em><br>
+打开<em>构建与部署</em><br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688609583.png" alt="" loading="lazy"><br>
+返回项目找到静态网站填写好网站名称后点击保存<br>
+然后你就可已看到你的<em>网站访问地址</em>了<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584688797547.png" alt="" loading="lazy"><br>
+添加访问令牌<br>
+我们在<em>个人设置</em>里面找到<em>访问令牌</em>，创建一个令牌<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689144729.png" alt="" loading="lazy"><br>
+创建完成后会有一个令牌用户名和令牌，这里注意令牌只会出现一次，这里我们注意保存。<br>
+<strong>配置Gridea</strong><br>
+进入<a href="https://gridea.dev/">Gridea官网</a>，下载安装gridea<br>
+打开Gridea，选择远程<br>
+域名填写之前生成的<em>网站访问地址</em>，这里注意你的网站访问地址是http协议还是https协议。<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689571079.png" alt="" loading="lazy"><br>
+这里可以看到你的仓库名称<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689641057.png" alt="" loading="lazy"><br>
+这里可以看到你的仓库用户名<br>
+分支填写master<br>
+并填入之前生产的令牌用户名和令牌<br>
+<img src="https://km0n30.coding-pages.com/post-images/1584689746413.png" alt="" loading="lazy"><br>
+检测远程连接成功后，我们就可以点击同步，同步成功后我们再去访问我们的<em>网站访问地址</em>就可以看到我们的网站了。</p>
+<p><strong>到这里主要工作就结束了，剩下的就是自己去开发美化了</strong></p>
+
               </div>
-            </a>
-          
-        
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      小王
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/" title="零成本搭建个人博客">零成本搭建个人博客</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
-        
+    </div>
+    <div class="nav-next">
       
-        
-      
-        
+        <a class="nav-pc-next" title="精灵与萤火意志" href="https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/">精灵与萤火意志</a>
+        <a class="nav-mobile-next" title="精灵与萤火意志" href="https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+                
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+<script>
+new Valine({
+    el: '#vcomments' ,
+    appId: 'goUkVpv94yJtL5kv59wMsbYz-gzGzoHsz',
+    appKey: 'sNi70eNzwv5jE4TjkdkRWM9Q',
+    notify: 'true' === 'true', 
+    avatar:'identicon', 
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'true',
+});
+</script>
+              
+            </div>
           </div>
         </div>
       </div>
