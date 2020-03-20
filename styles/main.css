@@ -2013,7 +2013,7 @@ body {
     }
     .mist .site-title i {
       background: #FFF;
-    }.box-scale > #landlord {
+    }body {cursor: url('some-cursor.ico'), default;}.box-scale > #landlord {
       transform: scale(1);
     }.box-shadow-wrapper {
       box-shadow: none !important;
