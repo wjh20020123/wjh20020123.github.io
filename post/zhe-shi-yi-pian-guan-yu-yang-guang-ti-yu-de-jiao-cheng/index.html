@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="小王">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
-<title>小王</title>
+<title>这是一篇关于阳光体育的教程 | 小王</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1584789763855">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -37,6 +37,8 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+    <meta name="description" content="这是一篇关于阳光体育的教程" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -67,7 +69,7 @@ var _hmt = _hmt || [];
       <nav class="site-nav" id="site_nav">
         <ul id="nav_ul">
           
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -140,8 +142,23 @@ var _hmt = _hmt || [];
       
       <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://km0n30.coding-pages.com/images/avatar.png"/>
@@ -192,27 +209,92 @@ var _hmt = _hmt || [];
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-          <div class="section-box gemini">
-            <section class="section  posts-expand slide-down-in">
-              
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://km0n30.coding-pages.com/post/zhe-shi-yi-pian-guan-yu-yang-guang-ti-yu-de-jiao-cheng/">
       这是一篇关于阳光体育的教程
@@ -237,215 +319,101 @@ var _hmt = _hmt || [];
       <span>394<span class="pc-show">字数</span></span>
     </span>
     
-  </div>
-</header>
-      <div class="post-body">
-        
-          
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://km0n30.coding-pages.com/post/zhe-shi-yi-pian-guan-yu-yang-guang-ti-yu-de-jiao-cheng/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
       
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/">
-      零成本搭建个人博客
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-03-20</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-      <span class="meta-item">
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
+      
         
-          
-            <a href="https://km0n30.coding-pages.com/tag/EvxpKGPs0/">
-              <span>搭建博客</span>
-            </a>
-          
-        
+      
+      <span id="/post/zhe-shi-yi-pian-guan-yu-yang-guang-ti-yu-de-jiao-cheng/" data-flag-title="这是一篇关于阳光体育的教程" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
       </span>
-      <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>355<span class="pc-show">字数</span></span>
-    </span>
     
   </div>
 </header>
-      <div class="post-body">
-        
-          
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+              <div class="post-body next-md-body" id="post_body">
+                <p>关于<s>阳光</s>体育这里就不多展开介绍了。<br>
+废话不多说，下面教你们如何在<s>一分钟</s>内搞定他。<br>
+1.环境准备<br>
+<s>首先我们需要一台有root权限的安卓手机。</s>（现在大部分手机都不能root）<br>
+首先我们在电脑上下载<a href="https://www.yeshen.com/">夜神模拟器</a>，在模拟器设置中开区root。<br>
+下载安装好微信和<a href="https://www.coolapk.com/apk/cn.wq.myandroidtools">写轮眼</a>.<br>
+打开写轮眼同意获取root权限。<br>
+我们打开阳光体育。这时候我们利用模拟器自带的位置模拟改变我们的位置到指定场地。<br>
+<img src="https://i.loli.net/2020/03/21/s2dcbG5iK1FChPM.png" alt="QQ图片20200321184503.png" loading="lazy"><br>
+这里我定位到我所在学校的跑步场地，<br>
+<img src="https://i.loli.net/2020/03/21/d498PSu6W2fZJvm.png" alt="94WERI_MVFYOI_O_AXXNJ1N.png" loading="lazy"><br>
+定位到指定场地后我们选择开始跑步，关闭阳光体育后台。<br>
+<img src="https://i.loli.net/2020/03/21/fHFYiAIOsdmcoqj.png" alt="D_6_BPZ__~D4V9_RKZWC__Q.png" loading="lazy"><br>
+打开写轮眼，找到应用程序，点击阳光体育出现一个弹窗<br>
+<img src="https://i.loli.net/2020/03/21/wxJX3ZrMhIYuWBv.png" alt="_9_LDQGB7B4GLN_2G_PM238.png" loading="lazy"><br>
+我们点击查看所有组件信息选择关闭f<br>
+<img src="https://i.loli.net/2020/03/21/glYmC25F6sJETe1.png" alt="A61_IY0HJ481@_8_BHOCIIA.png" loading="lazy"><br>
+关闭f后来到数据库找到阳光体育选择GameData.bd<br>
+<img src="https://i.loli.net/2020/03/21/41vkEfdx92prjN7.png" alt="U_Y@_TTAUP_2U_~1_LFAPFR.png" loading="lazy"><br>
+选择gamedata<br>
+<img src="https://i.loli.net/2020/03/21/brKmcnLhptjzRZi.png" alt="S_S_BRGGW_ZEZBE5B_8SI.png" loading="lazy"><br>
+我们会看到一栏数据，这个数据就是我们的运动数据了，点击这栏数据。<br>
+<img src="https://i.loli.net/2020/03/21/FJ6jImMiyO1SW7h.png" alt="33" loading="lazy"><br>
+修改成学校规定的目标距离，时间，步数修改成1较为合理的数据，修改完成后点击保存。<br>
+回到应用程序，打开我们之前关闭的f。关闭写轮眼。<br>
+这时候我们打开阳光体育，等待几秒，我们就会发现我们已经达成任务了。<br>
+<img src="https://i.loli.net/2020/03/21/y9MbjgmTIRculH5.png" alt="CG_O~D5_@0H_5S`YV8U4_74.png" loading="lazy"><br>
+<strong>仅用作学习交流！不当使用造成的任何后果与本人无关！</strong></p>
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/">
-      精灵与萤火意志
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-03-20</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-      <span class="meta-item">
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://km0n30.coding-pages.com/tag/yUQ7sRyiX/">
-              <span>游戏</span>
-            </a>
-          
-        
-      </span>
-      <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>149<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-          
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://km0n30.coding-pages.com/post/jing-ling-yu-ying-huo-yi-zhi/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://km0n30.coding-pages.com/post/test/">
-      test
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-03-20</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>1<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-          
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://km0n30.coding-pages.com/post/test/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-  
-              
-              
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-    
-    
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      小王
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://km0n30.coding-pages.com/post/zhe-shi-yi-pian-guan-yu-yang-guang-ti-yu-de-jiao-cheng/" title="这是一篇关于阳光体育的教程">这是一篇关于阳光体育的教程</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
   </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="零成本搭建个人博客" href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/">零成本搭建个人博客</a>
+        <a class="nav-mobile-next" title="零成本搭建个人博客" href="https://km0n30.coding-pages.com/post/ling-cheng-ben-da-jian-ge-ren-bo-ke/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
 </div>
-            </section>
+              
+                
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+<script>
+new Valine({
+    el: '#vcomments' ,
+    appId: 'goUkVpv94yJtL5kv59wMsbYz-gzGzoHsz',
+    appKey: 'sNi70eNzwv5jE4TjkdkRWM9Q',
+    notify: 'true' === 'true', 
+    avatar:'identicon', 
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'true',
+});
+</script>
+              
+            </div>
           </div>
         </div>
       </div>
