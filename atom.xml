@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://km0n30.coding-pages.com</id>
     <title>小王</title>
-    <updated>2020-03-22T08:58:30.652Z</updated>
+    <updated>2020-03-22T09:07:19.172Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://km0n30.coding-pages.com"/>
     <link rel="self" href="https://km0n30.coding-pages.com/atom.xml"/>
@@ -74,7 +74,7 @@
 项目名称和标识随便填<br>
 启用readme.md<br>
 <img src="https://km0n30.coding-pages.com/post-images/1584688430421.png" alt="" loading="lazy"><br>
-进入项目点击左下角的<em>项目设置</em><br>
+进入项目点击<strong>左下角</strong>的<em>项目设置</em><br>
 打开<em>构建与部署</em><br>
 <img src="https://km0n30.coding-pages.com/post-images/1584688609583.png" alt="" loading="lazy"><br>
 返回项目找到静态网站填写好网站名称后点击保存<br>
