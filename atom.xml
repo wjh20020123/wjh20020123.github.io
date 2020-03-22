@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://km0n30.coding-pages.com</id>
     <title>小王</title>
-    <updated>2020-03-22T05:05:30.952Z</updated>
+    <updated>2020-03-22T05:18:31.587Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://km0n30.coding-pages.com"/>
     <link rel="self" href="https://km0n30.coding-pages.com/atom.xml"/>
@@ -27,8 +27,9 @@
         </link>
         <updated>2020-03-21T10:16:21.000Z</updated>
         <content type="html"><![CDATA[<p>关于<s>阳光</s>体育这里就不多展开介绍了。<br>
-废话不多说，下面教你们如何在<s>一分钟</s>内搞定他。<br>
-[toc]1.环境准备<br>
+废话不多说，下面教你们如何在<s>一分钟</s>内搞定他。</p>
+<ol>
+<li>环境准备<br>
 <s>首先我们需要一台有root权限的安卓手机。</s>（现在大部分手机都不能root）<br>
 首先我们在电脑上下载<a href="https://www.yeshen.com/">夜神模拟器</a>，在模拟器设置中开区root。<br>
 下载安装好微信和<a href="https://www.coolapk.com/apk/cn.wq.myandroidtools">写轮眼</a>.<br>
@@ -38,7 +39,8 @@
 这里我定位到我所在学校的跑步场地，<br>
 <img src="https://i.loli.net/2020/03/21/d498PSu6W2fZJvm.png" alt="94WERI_MVFYOI_O_AXXNJ1N.png" loading="lazy"><br>
 定位到指定场地后我们选择开始跑步，关闭阳光体育后台。<br>
-<img src="https://i.loli.net/2020/03/21/fHFYiAIOsdmcoqj.png" alt="D_6_BPZ__~D4V9_RKZWC__Q.png" loading="lazy"><br>
+<img src="https://i.loli.net/2020/03/21/fHFYiAIOsdmcoqj.png" alt="D_6_BPZ__~D4V9_RKZWC__Q.png" loading="lazy"></li>
+<li>数据修改<br>
 打开写轮眼，找到应用程序，点击阳光体育出现一个弹窗<br>
 <img src="https://i.loli.net/2020/03/21/wxJX3ZrMhIYuWBv.png" alt="_9_LDQGB7B4GLN_2G_PM238.png" loading="lazy"><br>
 我们点击查看所有组件信息选择关闭f<br>
@@ -53,7 +55,8 @@
 回到应用程序，打开我们之前关闭的f。关闭写轮眼。<br>
 这时候我们打开阳光体育，等待几秒，就会发现我们已经达成任务了。<br>
 <img src="https://i.loli.net/2020/03/21/y9MbjgmTIRculH5.png" alt="CG_O~D5_@0H_5S`YV8U4_74.png" loading="lazy"><br>
-<strong>仅用作学习交流！不当使用造成的任何后果与本人无关！</strong></p>
+<strong>仅用作学习交流！不当使用造成的任何后果与本人无关！</strong></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
@@ -124,6 +127,7 @@
         </link>
         <updated>2020-03-20T03:21:36.000Z</updated>
         <content type="html"><![CDATA[<p>sda</p>
+<hr>
 ]]></content>
     </entry>
 </feed>
