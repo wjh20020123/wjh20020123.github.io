@@ -2086,6 +2086,12 @@ blockquote {
     }.bg-color {
       background-color: #ffffffea;
     }
+    .gemini .blog-header, .gemini .sidebar-wrapper, .gemini .article-wrapper, .gemini .post, .gemini .page, .gemini .section, .gemini .section-box, .gemini .sidebar-box, .gemini .friends-section {
+      border-radius: 5px;
+    }
+    .pisces .blog-header, .pisces .sidebar-wrapper, .pisces .article-wrapper, .pisces .section, .pisces .sidebar-box, .pisces .friends-section {
+      border-radius: 5px;
+    }
       .site-meta {
         background: #000 !important;
       }
@@ -2102,6 +2108,4 @@ blockquote {
       background: #FFFFFFea;
     }.box-scale > #landlord {
       transform: scale(1);
-    }.box-shadow-wrapper {
-      box-shadow: none !important;
     }
