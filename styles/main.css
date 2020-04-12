@@ -2108,4 +2108,6 @@ blockquote {
       background: #FFFFFFea;
     }.box-scale > #landlord {
       transform: scale(1);
+    }.box-shadow-wrapper {
+      padding: 10px;
     }
