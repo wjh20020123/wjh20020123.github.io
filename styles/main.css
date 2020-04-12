@@ -1080,6 +1080,11 @@ blockquote {
   text-align: left;
   list-style: none;
   font-size: 14px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.markdownIt-TOC::-webkit-scrollbar {
+  display: none;
 }
 .markdownIt-TOC .active-show > ul {
   display: block;
@@ -1638,7 +1643,6 @@ blockquote {
   padding-right: 20px;
 }
 .next-md-body code {
-  background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
   font-size: 85%;
   margin: 0;
@@ -1648,7 +1652,6 @@ blockquote {
   word-wrap: normal;
 }
 .next-md-body pre > code {
-  background: transparent;
   border: 0;
   font-size: 100%;
   margin: 0;
@@ -1665,23 +1668,19 @@ blockquote {
 }
 .next-md-body .highlight pre,
 .next-md-body pre {
-  background-color: #f6f8fa;
   border-radius: 3px;
   font-size: 85%;
   line-height: 1.45;
   overflow: auto;
-  padding: 16px;
 }
 .next-md-body pre code {
-  background-color: transparent;
   border: 0;
-  display: inline;
   line-height: inherit;
   margin: 0;
   max-width: auto;
-  overflow: visible;
   padding: 0;
   word-wrap: normal;
+  padding: 16px;
 }
 .next-md-body .commit-tease-sha {
   color: #444d56;
@@ -2103,8 +2102,6 @@ blockquote {
       background: #FFFFFFea;
     }.box-scale > #landlord {
       transform: scale(1);
-    }.box-shadow-wrapper {
-      padding: 10px;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }
