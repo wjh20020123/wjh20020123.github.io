@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
 <title>钱君 | 且听风铃</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605962942151">
+<link rel="shortcut icon" href="/favicon.ico?v=1605963552923">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -204,7 +204,7 @@
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
-    <p class="site-author-name">适用 Gemini,Pisces 布局,版权说明需配置</p>
+    <p class="site-author-name">是我</p>
     
   </div>
   <div class="sidebar-item side-item-stat right-motion">
@@ -389,7 +389,7 @@
   <ul class="post-copyright">
     <li class="post-copyright-author">
       <strong class="language" data-lan="author">本文作者：</strong>
-      适用 Gemini,Pisces 布局,版权说明需配置
+      是我
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
@@ -550,7 +550,7 @@ setTimeout(showsectime, 1000);
   
   
   <div class="bg-img">
-    <img src="D:\QQ\1553509168\FileRecv\MobileFile\1.png" />
+    <img src="/media/images/background.png" />
   </div>
   
   
@@ -580,11 +580,15 @@ setTimeout(showsectime, 1000);
         <div class="live_ico_item type_info" id="showInfoBtn"></div>
         <div class="live_ico_item type_talk" id="showTalkBtn"></div>
         
+        <div class="live_ico_item type_music" id="musicButton"></div>
+        
         <div class="live_ico_item type_youdu" id="youduButton"></div>
         <div class="live_ico_item type_quit" id="hideButton"></div>
         <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
         <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
         <input id="duType" value="douqilai" type="hidden">
+        
+        <input name="live2dBGM" value="" type="hidden">
         
       </div>
     
@@ -1295,6 +1299,8 @@ setTimeout(showsectime, 1000);
         <div style="position: relative; width: 140px; height: 140px;">
           
           
+            <img id="zfb" class="reward-img" src="\media\images\zfb.jpg" alt="赞赏码">
+          
           
         </div>
       </div>
@@ -1302,6 +1308,10 @@ setTimeout(showsectime, 1000);
       <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
     </div>
     <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
       
       
     </div>
@@ -2015,9 +2025,15 @@ C2&lt;br&gt;
 </script>
 
 
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="/media/js/mouse/fireworks.js"></script>
+
 
 <script src="/media/js/cool.js"></script>
 
 
+
+<script src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/sakura.js"></script>
 
 </html>
