@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wjh20020123.github.io</id>
     <title>且听风铃</title>
-    <updated>2020-11-22T12:42:07.330Z</updated>
+    <updated>2020-11-22T12:54:00.744Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wjh20020123.github.io"/>
     <link rel="self" href="https://wjh20020123.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://wjh20020123.github.io/images/avatar.png</logo>
     <icon>https://wjh20020123.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 且听风铃</rights>
+    <entry>
+        <title type="html"><![CDATA[终于回来了]]></title>
+        <id>https://wjh20020123.github.io/post/XIKOPLPCd/</id>
+        <link href="https://wjh20020123.github.io/post/XIKOPLPCd/">
+        </link>
+        <updated>2020-11-22T12:53:24.000Z</updated>
+        <content type="html"><![CDATA[<p>GitHub比Coding好用多了</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[钱君]]></title>
         <id>https://wjh20020123.github.io/post/wFOCFlmgI/</id>
@@ -219,15 +228,6 @@ C2<br>
         <updated>2020-03-20T03:21:36.000Z</updated>
         <content type="html"><![CDATA[<p>sda</p>
 <hr>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[王嘉豪的又一个网站]]></title>
-        <id>https://wjh20020123.github.io/post/xiao-wang-de-you-yi-ge-wang-zhan/</id>
-        <link href="https://wjh20020123.github.io/post/xiao-wang-de-you-yi-ge-wang-zhan/">
-        </link>
-        <updated>2020-03-19T14:01:53.000Z</updated>
-        <content type="html"><![CDATA[<p>无</p>
 ]]></content>
     </entry>
 </feed>
