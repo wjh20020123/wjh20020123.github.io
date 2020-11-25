@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wjh.co.ax</id>
     <title>且听风铃</title>
-    <updated>2020-11-22T16:11:19.554Z</updated>
+    <updated>2020-11-25T14:11:23.583Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wjh.co.ax"/>
     <link rel="self" href="https://wjh.co.ax/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://wjh.co.ax/images/avatar.png</logo>
     <icon>https://wjh.co.ax/favicon.ico</icon>
     <rights>All rights reserved 2020, 且听风铃</rights>
+    <entry>
+        <title type="html"><![CDATA[刷课11.25]]></title>
+        <id>https://wjh.co.ax/post/j4cBvBhNr/</id>
+        <link href="https://wjh.co.ax/post/j4cBvBhNr/">
+        </link>
+        <updated>2020-11-25T14:10:56.000Z</updated>
+        <content type="html"><![CDATA[<p>http://d0.ananas.chaoxing.com/download/ed31ae852862bddb34891b8b0869d522?fn=%E5%88%B7%E8%AF%BE11.25</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[终于回来了]]></title>
         <id>https://wjh.co.ax/post/XIKOPLPCd/</id>
@@ -218,16 +227,6 @@ C2<br>
 <li>提取码<em>9bdi</em><br>
 #虽然不挺倡议使用盗版，但奈何钱包空空。😭</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[test]]></title>
-        <id>https://wjh.co.ax/post/test/</id>
-        <link href="https://wjh.co.ax/post/test/">
-        </link>
-        <updated>2020-03-20T03:21:36.000Z</updated>
-        <content type="html"><![CDATA[<p>sda</p>
-<hr>
 ]]></content>
     </entry>
 </feed>
